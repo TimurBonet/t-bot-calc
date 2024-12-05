@@ -26,7 +26,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
         register(new PlusCommand("plus", "Сложение"));
         register(new MinusCommand("minus", "Вычитание"));
         register(new PlusMinusCommand("minus", "Сложение и вычитание"));
-        
+
 
     }
 }
