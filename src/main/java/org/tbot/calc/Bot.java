@@ -2,7 +2,9 @@ package org.tbot.calc;
 
 import lombok.Getter;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
+import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public final class Bot extends TelegramLongPollingCommandBot {
@@ -26,7 +28,8 @@ public final class Bot extends TelegramLongPollingCommandBot {
         register(new PlusCommand("plus", "Сложение"));
         register(new MinusCommand("minus", "Вычитание"));
         register(new PlusMinusCommand("minus", "Сложение и вычитание"));
-
-
+        register(new HelpCommand("help", "Помощь"));
+        register(new SettingsCommand("settings", "Мои настройки"));
+        userSettings = new HashMap<>();
     }
 }
