@@ -1,6 +1,8 @@
 package org.tbot.calc.telegramm.nonCommand;
 
 
+import org.tbot.calc.exceptions.IllegalSettingsException;
+
 public class ConfigureSettings {
 
     static int calculateMin(int min, int max) {

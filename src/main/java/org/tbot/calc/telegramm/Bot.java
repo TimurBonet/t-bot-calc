@@ -2,6 +2,7 @@ package org.tbot.calc.telegramm;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.tbot.calc.telegramm.nonCommand.NonCommand;
 import org.tbot.calc.telegramm.nonCommand.Settings;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
@@ -89,7 +90,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
         Long chatId = msg.getChatId();
         String userName = getUserName(msg);
 
-        String answer = nonCommand.nonCommandExecute(chatId, userName, msg.getText());
+        String answer = nonCommand.nonCommandRequest(chatId, userName, msg.getText());
         setAnswer(chatId, userName, answer);
     }
 
